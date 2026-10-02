@@ -30,18 +30,15 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _pages,
-      ),
+      body: IndexedStack(index: _selectedIndex, children: _pages),
 
-      bottomNavigationBar:  BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         backgroundColor: AppColors.surface,
         selectedItemColor: AppColors.accent,
         unselectedItemColor: AppColors.textSecondary,
-        type: BottomNavigationBarType.shifting,
+        type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
@@ -53,15 +50,15 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             activeIcon: Icon(Icons.search),
-            label: 'Search'
+            label: 'Search',
           ),
 
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
             activeIcon: Icon(Icons.favorite),
             label: 'Favorites',
-          )
-        ]
+          ),
+        ],
       ),
     );
   }
