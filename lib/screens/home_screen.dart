@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
               const SectionHeader(title: 'Popular Movie'),
 
               SizedBox(
-                height: 230,
+                height: 250,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -42,14 +42,33 @@ class HomeScreen extends StatelessWidget {
                     final movie = mockPopularMovies[index];
 
                     return Padding(
-                      padding: const EdgeInsets.only(
-                        right: 12
-                      ),
+                      padding: const EdgeInsets.only(right: 12),
 
-                      child: MoviePosterCard(
-                        movie: movie,
-                        width: 130,
-                      ),
+                      child: MoviePosterCard(movie: movie, width: 130),
+                    );
+                  },
+                ),
+              ),
+
+              SizedBox(height: 10),
+
+              const SectionHeader(title: 'Trending Movie'),
+
+              SizedBox(
+                height: 250,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  // scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemCount: mockTrendingMovies.length,
+                  itemBuilder: (context, index) {
+                    final movie = mockTrendingMovies[index];
+
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 12),
+
+                      child: MoviePosterCard(movie: movie, width: 130),
                     );
                   },
                 ),

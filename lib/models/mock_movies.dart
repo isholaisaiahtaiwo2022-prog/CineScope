@@ -1,7 +1,7 @@
 import 'package:movie_app/models/movie.dart';
 
-final List<movie> mockPopularMovies = [
-  const movie(
+final List<Movie> mockPopularMovies = [
+  const Movie(
     id: '1',
     title: 'Dune: Part Two',
     posterUrl:
@@ -16,7 +16,7 @@ final List<movie> mockPopularMovies = [
         'Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.',
   ),
 
-  const movie(
+  const Movie(
     id: '2',
     title: 'Spider-Man: Across the Spider-Verse',
     posterUrl:
@@ -30,7 +30,7 @@ final List<movie> mockPopularMovies = [
     overview:
         'Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.',
   ),
-  const movie(
+  const Movie(
     id: '3',
     title: 'Oppenheimer',
     posterUrl:
@@ -46,8 +46,8 @@ final List<movie> mockPopularMovies = [
   ),
 ];
 
-final List<movie> mockTrendingMovies = [
-  const movie(
+final List<Movie> mockTrendingMovies = [
+  const Movie(
     id: '3',
     title: 'Oppenheimer',
     posterUrl:
@@ -61,7 +61,7 @@ final List<movie> mockTrendingMovies = [
     overview:
         'The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.',
   ),
-  const movie(
+  const Movie(
     id: '4',
     title: 'Interstellar',
     posterUrl:
@@ -75,7 +75,7 @@ final List<movie> mockTrendingMovies = [
     overview:
         'When Earth becomes uninhabitable, a farmer and ex-NASA pilot is asked to pilot a spacecraft, along with a team of researchers, to find a new planet.',
   ),
-  const movie(
+  const Movie(
     id: '1',
     title: 'Dune: Part Two',
     posterUrl:

@@ -1,4 +1,4 @@
-class movie {
+class Movie {
   final String id;
   final String title;
   final String posterUrl;
@@ -10,7 +10,7 @@ class movie {
   final String overview;
   final bool isFavorite;
 
-  const movie({
+  const Movie({
     required this.id,
     required this.title,
     required this.posterUrl,
