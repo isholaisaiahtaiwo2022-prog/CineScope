@@ -42,6 +42,7 @@ class HomeScreen extends StatelessWidget {
                     final movie = mockPopularMovies[index];
 
                     return Padding(
+                      
                       padding: const EdgeInsets.only(right: 12),
 
                       child: MoviePosterCard(movie: movie, width: 130),

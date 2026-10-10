@@ -44,9 +44,9 @@ class _SearchScreenState extends State<SearchScreen> {
               padding: const EdgeInsets.all(16.0),
               child: SearchBarInput(
                 controller: _searchController,
-                onChanged: (value) {
+                onChanged: (userInput) {
                   setState(() {
-                    _query = value;
+                    _query = userInput;
                   });
                 },
 
@@ -91,7 +91,7 @@ class _SearchScreenState extends State<SearchScreen> {
             const SizedBox(height: 4),
 
             Text(
-              'There are no results for "$_query".',
+              'Enter your search search above.',
               style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
             ),
           ],
@@ -138,8 +138,8 @@ class _SearchScreenState extends State<SearchScreen> {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 0.65,
+        crossAxisCount: 5,
+        childAspectRatio: 0.55,
         crossAxisSpacing: 12,
       ),
       itemCount: searchResults.length,
