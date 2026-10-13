@@ -176,5 +176,16 @@ class _SearchScreenState extends State<SearchScreen> {
         );
       },
     );
+
+    // return GridView.extent(
+    //   padding: const EdgeInsets.symmetric(horizontal: 16),
+    //   maxCrossAxisExtent: 190,
+    //   crossAxisSpacing: 12,
+    //   mainAxisExtent: 16,
+    //   childAspectRatio: 0.6,
+    //   children: searchResults.map((movie) {
+    //     return MoviePosterCard(movie: movie);
+    //   }).toList(),
+    // );
   }
 }
