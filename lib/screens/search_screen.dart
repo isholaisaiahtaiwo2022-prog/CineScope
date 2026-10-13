@@ -134,22 +134,45 @@ class _SearchScreenState extends State<SearchScreen> {
       );
     }
 
-    // Active Search Results grid
-    return GridView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 5,
-        childAspectRatio: 0.55,
-        crossAxisSpacing: 12,
-      ),
-      itemCount: searchResults.length,
-      itemBuilder: (context, index) {
-        final movie = searchResults[index];
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        const horizontalPadding = 16.0;
+        const crossAxisSpacing = 12.0;
+        const maxCardWidth = 190.0;
+        final gridWidth = constraints.maxWidth - horizontalPadding * 2;
+        final crossAxisCount =
+            ((gridWidth + crossAxisSpacing) / (maxCardWidth + crossAxisSpacing))
+                .floor()
+                .clamp(2, 5)
+                .toInt();
+        final cardWidth =
+            (gridWidth - crossAxisSpacing * (crossAxisCount - 1)) /
+            crossAxisCount;
+        final textScaler = MediaQuery.textScalerOf(context);
+        final cardHeight =
+            cardWidth * 1.5 + textScaler.scale(18) + textScaler.scale(16) + 20;
 
-        return MoviePosterCard(
-          movie: movie,
-          width: double.infinity,
-          onTap: () {},
+        return GridView.builder(
+          padding: const EdgeInsets.symmetric(
+            horizontal: horizontalPadding,
+            vertical: 8,
+          ),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            mainAxisExtent: cardHeight,
+            crossAxisSpacing: crossAxisSpacing,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: searchResults.length,
+          itemBuilder: (context, index) {
+            final movie = searchResults[index];
+
+            return MoviePosterCard(
+              movie: movie,
+              width: double.infinity,
+              onTap: () {},
+            );
+          },
         );
       },
     );

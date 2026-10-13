@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:movie_app/core/app_colors.dart';
 
 class SearchBarInput extends StatelessWidget {
